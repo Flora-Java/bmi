@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- Flora Lopez
+     standardMeasures.html
+     This page calculates the BMI  with standard measures.  -->
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calculating with Standard Measures</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<h3>Calculating with Standard Measures</h3>
+	<p>Please fill in your information and click the button</p>
+	<form class="form-inline">
+		<label for="feet">Your height:</label> <input type="number" id="feet"
+			placeholder="feet" name="feet"> <input type="number"
+			id="inches" placeholder="inches" name="inches"> </br> <label
+			for="weight">Your weight:</label> <input type="number" id="weight"
+			placeholder="pounds" name="weight"> </br>
+		<button class="buttOn" onclick="calculate()">Calculate BMI</button>
+		<table>
+			<tr>
+				<th></th>
+				<th>BMI Chart</th>
+			</tr>
+			<tr>
+				<th>Underweight:</th>
+				<td>12 - 18</td>
+			</tr>
+			<tr>
+				<th>Healthy:</th>
+				<td>19 - 24</td>
+			</tr>
+			<tr>
+				<th>Overweight:</th>
+				<td>25 - 29</td>
+			</tr>
+			<tr>
+				<th>Obese:</th>
+				<td>30 - 39</td>
+			</tr>
+			<tr>
+				<th>Extremely Obese:</th>
+				<td>40 - 42</td>
+			</tr>
+		</table>
+		<p>
+			<a href="index.html">Go back to home page</a>
+		</p>
+		<script>
+			function calculate() {
+				var a = document.getElementById('feet').value;
+				var b = document.getElementById('inches').value;
+				var c = document.getElementById('weight').value;
+				var height = ((a * 12) + (b * 1)) / 39.37;
+				var weight1 = c / 2.2046;
+				var bmi = weight1 / (height * height);
+				alert("Your BMI is: " + Math.round(bmi));
+			}
+		</script>
+
+	</form>
+</body>
+</html>
